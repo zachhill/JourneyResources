@@ -1,14 +1,22 @@
-// Global styling for this theme
-
-html {
-  height: 100%;
+// Global styling for this template
+body {
+  overflow-x: hidden;
+  @include body-font;
 }
 
-body {
-  height: 100%;
-  min-height: 35rem;
-  position: relative;
-  @include body-font;
+p {
+  line-height: 1.75;
+}
+
+a {
+  color: $primary;
+  &:hover {
+    color: darken($primary, 10%);
+  }
+}
+
+.text-primary {
+  color: $primary !important;
 }
 
 h1,
@@ -17,38 +25,74 @@ h3,
 h4,
 h5,
 h6 {
+  font-weight: 700;
   @include heading-font;
 }
 
-video {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translateX(-50%) translateY(-50%);
-  z-index: 0;
-}
-
-@media (pointer: coarse) and (hover: none) {
-  body {
-    background: url('../img/bg-mobile-fallback.jpg') $primary no-repeat center center scroll;
-    background-position: cover;
+section {
+  padding: 100px 0;
+  h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
   }
-  body video {
-    display: none;
+  h3.section-subheading {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 75px;
+    text-transform: none;
+    @include serif-font;
   }
 }
+@media(min-width:768px) {
+  section {
+    padding: 150px 0;
+  }
+}
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background-color: $secondary;
-  opacity: 0.7;
-  z-index: 1;
+// Button Styles
+.btn {
+  @include heading-font;
+  font-weight: 700;
+}
+
+.btn-xl {
+  font-size: 18px;
+  padding: 20px 40px;
+}
+
+.btn-primary {
+  background-color: $primary;
+  border-color: $primary;
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: darken($primary, 7.5%) !important;
+    border-color: darken($primary, 7.5%) !important;
+    color: white;
+  }
+  &:active,
+  &:focus {
+    box-shadow: 0 0 0 0.2rem rgba(254, 209, 55,.5) !important;
+  }
+}
+
+// Highlight color customization
+::-moz-selection {
+  background: $primary;
+  text-shadow: none;
+}
+
+::selection {
+  background: $primary;
+  text-shadow: none;
+}
+
+img::selection {
+  background: transparent;
+}
+
+img::-moz-selection {
+  background: transparent;
 }
