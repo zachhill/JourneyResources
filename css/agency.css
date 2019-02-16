@@ -4,7 +4,11 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
  */
 
-
+.cursive {
+  font-family: 'Niconne', cursive;
+  font-size; 2rem;
+  font-weight: 400;
+}
 
 
 .w3-tangerine {
